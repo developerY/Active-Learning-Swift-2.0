@@ -11,6 +11,7 @@
         <page name='Swift and Cocoa Touch'/>
         <page name='License'/>
         <page name='UIKit'/>
+        <page name='CoreData'/>
         <page name='UIResources'/>
     </pages>
 </playground>
