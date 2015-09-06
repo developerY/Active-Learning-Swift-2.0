@@ -25,6 +25,22 @@ let label = "The width is "
 let width = 94
 let widthLabel = label + String(width)
 
+//: Constant & Variable names cannot contain any mathematical symbols, arrows private-use (or
+//: invalid) Unicode code points or line-and-box drawing characters. Nor can they begin with a
+//: number. Otherwise, it's open season for naming your variables! (yes, really!)
+//:
+//: Here are some oddly named, but perfectly valid, constants:
+let 你好 = "你好世界"
+let 🐶🐮 = "dogcow"
+var dogcow = "🐶🐮"
+dogcow = 🐶🐮
+
+let π = 3.14159
+print(π)
+let pie = "π"
+print(pie, appendNewline: true)
+
+
 //: > **Experiment**:
 //: > Try removing the conversion to `String` from the last line. What error do you get?
 //:

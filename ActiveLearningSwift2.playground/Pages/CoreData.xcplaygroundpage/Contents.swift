@@ -1,3 +1,5 @@
+//: [Previous](@previous)
+
 //: ## A Swift Introduction to Core Data
 //:
 //: Let's create a basic Core Data model and populate it with two related entities. The two entities in our data model will be City and Neighborhood. There is a one-to-many relationship between cities and neighborhoods. A City has many Neighborhoods and each Neighborhood belongs to one City. Here's a diagram representing the model.
@@ -248,4 +250,9 @@ if let managedObject = managedObject {
 }
 
 //: That wraps up a basic introduction to Core Data using a Swift and a Playground. The Core Data framework is big and there's [much more explore](http://www.objc.io/issue-4/). For more information, consider reading through the [Core Data Programming Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/Articles/cdBasics.html) or looking at the source for a Core Data [template project in Xcode](http://code.tutsplus.com/tutorials/core-data-from-scratch-core-data-stack--cms-20926).
+
+
+
+
+//: [Next](@next)
 

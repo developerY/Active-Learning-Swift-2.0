@@ -9,9 +9,18 @@
         <page name='Enumerations and Structures'/>
         <page name='Protocols'/>
         <page name='Swift and Cocoa Touch'/>
-        <page name='License'/>
         <page name='UIKit'/>
         <page name='CoreData'/>
         <page name='UIResources'/>
+        <page name='License'/>
+        <page name='ToC Swift SL'/>
+        <page name='Text'/>
+        <page name='Indexing and Slicing Strings'/>
+        <page name='Customizing Textual Representations'/>
+        <page name='Sequences and Collections'/>
+        <page name='Understanding Value Semantics'/>
+        <page name='Processing Sequences and Collections'/>
+        <page name='Slicing Collections'/>
+        <page name='Understanding Sequence and Collection Protocols'/>
     </pages>
 </playground>
