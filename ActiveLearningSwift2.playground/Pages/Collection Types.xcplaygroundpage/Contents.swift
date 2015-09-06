@@ -283,6 +283,119 @@ farmAnimals.isSupersetOf(houseAnimals)
 
 farmAnimals.isDisjointWith(cityAnimals)
 
+//: # Dictionaries
+//: *A dictionary stores associations between keys of the same type and values of the same type in a collection with no defined ordering. Each value is associated with a unique key, which acts as an identifier for that value within the dictionary. Unlike items in an array, items in a dictionary do not have a specified order. You use a dictionary when you need to look up values based on their identifier, in much the same way that a real-world dictionary is used to look up the definition for a particular word.*
+
+//: Notes:
+//: * Dictionaries store multiple values of the same type, each associated with a key which acts as  an identifier for that value within the dictionary.
+//: * Dictionaries are type-safe and always clear about what they contain.
+//: * The types of values that can be stored in a dictionary must always be made clear either through explicit type annotation or through type inference.
+
+
+//: ------------------------------------------------------------------------------------------------
+//: Creating a dictionary
+//:
+//: This is a Dictionary literal. They contain a comma-separated list of **key:value pairs**:
+["TYO": "Tokyo", "DUB": "Dublin"]
+
+// literal to define and initialize a Dictionary.
+// This uses the syntactic sugar "[ KeyType: ValueType ]" to declare the dictionary.
+var airports: [String : String] = ["TYO": "Tokyo", "DUB": "Dublin", "APL": "Apple Intl"]
+
+// The declaration for airports above could also have been declared in this way:
+var players: Dictionary<String, String> = ["Who" : "First", "What" : "Second"]
+
+//inference works in our favor allowing us to avoid the type annotation:
+let inferredDictionary = ["TYO": "Tokyo", "DUB": "Dublin"]
+
+//: ------------------------------------------------------------------------------------------------
+//: Accessing and modifying a Dictionary
+//:
+// get a value from the dictionary for the TYO airport:
+airports["TYO"]
+// chang the value
+airports["TYO"] = "Tokyo Airport"
+// update 
+airports.updateValue("Dublin Airport", forKey: "DUB")
+airports
+
+// removed
+airports["APL"] = nil
+let removedValue = airports.removeValueForKey("DUB")
+
+//: ### Iterating over key/value pairs with a for-in loop, which uses a Tuple to hold the
+//: key/value pair for each entry in the Dictionary:
+for (airportCode, airportName) in airports
+{
+    airportCode
+    airportName
+}
+
+// We can iterate over just the keys
+for airportCode in airports.keys
+{
+    airportCode
+}
+
+// We can iterate over jsut the values
+for airportName in airports.values
+{
+    airportName
+}
+
+// test empty
+if airports.isEmpty {
+    print("The airports dictionary is empty.")
+}
+
+
+// get count
+print("The airports dictionary contains \(airports.count) items.")
+
+//: We can create an array from the keys or values
+//:
+//: Note that when doing this, the use of Array() is needed to convert the keys or values into
+//: an array.
+var airportCodes = [String](airports.keys)
+var airportNames = [String](airports.values)
+// do not use the old way
+airportCodes = Array(airports.keys)
+airportNames = Array(airports.values)
+
+
+//: ------------------------------------------------------------------------------------------------
+//: Creating an empty Dictionary
+//:
+//: Here, we create an empty Dictionary of Int keys and String values:
+var namesOfIntegers = Dictionary<Int, String>()
+
+// Let's set one of the values
+namesOfIntegers[16] = "Sixteen"
+
+// We can empty a dictionary using an empty dictionary literal:
+namesOfIntegers = [:]
+namesOfIntegers.count
+
+// An immutable dictionary is a constant.
+let immutableDict = ["a": "one", "b": "two"]
+
+//: Similar to arrays, we cannot modify the contents of an immutable dictionary. The following lines
+//: will not compile:
+//:
+// immutableDict["a"] = "b" // You cannot modify an element
+// immutableDict["c"] = "three" // You cannot add a new entry or change the size
+
+//: *Dictionaries are value types, which means they are copied on assignment.*
+//
+// Let's create a Dictionary and copy it:
+var ages = ["Peter": 23, "Wei": 35, "Anish": 65, "Katya": 19]
+var copiedAges = ages
+
+// Next, we'll modify the copy:
+copiedAges["Peter"] = 24
+
+// And we can see that the original is not changed:
+ages["Peter"]
 
 
 
