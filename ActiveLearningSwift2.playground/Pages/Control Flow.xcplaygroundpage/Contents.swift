@@ -88,6 +88,31 @@ for _ in 0...4 {
 }
 print(secondForLoop)
 
+
+//:  ## Error handleing
+//:
+func canThrowanError() throws {
+}
+
+
+enum MyError: ErrorType {
+    case error1
+    case error2(description: String)
+}
+do {
+    try canThrowanError()
+} catch MyError.error1 {
+    // an error was thrown
+} catch MyError.error2(let description) {
+    
+}
+
+//: ## Assert 
+let age = -3
+assert(age >= 0, "A person's age cannot be less than zero")
+
+
+
 //: The _underscore_ (`_`) represents a wildcard, which you can use when you don’t need to know which iteration of the loop is currently executing. 
 //:
 //: [Previous](@previous) | [Next](@next)

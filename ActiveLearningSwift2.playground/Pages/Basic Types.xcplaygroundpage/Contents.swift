@@ -41,6 +41,7 @@ let pie = "π"
 print(pie, appendNewline: true)
 
 
+
 //: > **Experiment**:
 //: > Try removing the conversion to `String` from the last line. What error do you get?
 //:
@@ -51,6 +52,94 @@ let oranges = 5
 let appleSummary = "I have \(apples) apples."
 let fruitSummary = "I have \(apples + oranges) pieces of fruit."
 
+
+//: ## Type Alias
+
+typealias AudioSample = UInt16
+var maxAmplitudeFound = AudioSample.min
+
+
+//: Swift has a basic Boolean type, called Bool. Boolean values are referred to as logical, because they can only ever be true or false. Swift provides two Boolean constant values, true and false:
+
+let orangesAreOrange = true
+let turnipsAreDelicious = false
+
+/*
+Type Safety and Type Inference
+
+Swift is a type safe language. A type safe language encourages you to be clear about the types of values your code can work with. If part of your code expects a String, you can’t pass it an Int by mistake.
+
+Because Swift is type safe, it performs type checks when compiling your code and flags any mismatched types as errors. This enables you to catch and fix errors as early as possible in the development process.
+
+Type-checking helps you avoid errors when you’re working with different types of values. However, this doesn’t mean that you have to specify the type of every constant and variable that you declare. If you don’t specify the type of value you need, Swift uses type inference to work out the appropriate type. Type inference enables a compiler to deduce the type of a particular expression automatically when it compiles your code, simply by examining the values you provide.
+
+Because of type inference, Swift requires far fewer type declarations than languages such as C or Objective-C. Constants and variables are still explicitly typed, but much of the work of specifying their type is done for you.
+    
+    Type inference is particularly useful when you declare a constant or variable with an initial value. This is often done by assigning a literal value (or literal) to the constant or variable at the point that you declare it. (A literal value is a value that appears directly in your source code, such as 42 and 3.14159 in the examples below.)
+
+For example, if you assign a literal value of 42 to a new constant without saying what type it is, Swift infers that you want the constant to be an Int, because you have initialized it with a number that looks like an integer:*/
+
+let meaningOfLife = 42
+// meaningOfLife is inferred to be of type Int
+// Likewise, if you don’t specify a type for a floating-point literal, Swift infers that you want to create a Double:
+
+let pi = 3.14159
+// pi is inferred to be of type Double
+
+
+//: A decimal number, with no prefix
+//: A binary number, with a 0b prefix
+//: An octal number, with a 0o prefix
+//: A hexadecimal number, with a 0x prefix
+//: All of these integer literals have a decimal value of 17:
+//: Integer literals can be written as:
+
+let decimalInteger = 17
+let binaryInteger = 0b10001       // 17 in binary notation
+let octalInteger = 0o21           // 17 in octal notation
+let hexadecimalInteger = 0x11     // 17 in hexadecimal notation
+
+
+//:
+//: ## Tuples 
+//: are groups of values combined into a single, compound value
+//: ------------------------------------------------------------------------------------------------
+
+//: Defining a Tuple - use parenthesis around the comma-delimited list of values
+//:
+//: This Tuple doesn't specify types, so it relies on inference
+let httpError404 = (404, "Not found")
+
+//: We can also specify the type in order to avoid inferrence
+let someOtherTuple = (Double(100), Bool(false))
+
+//: Decomposing typles looks like this
+let (statusCode, statusMessage) = httpError404
+statusCode
+statusMessage
+
+//: We can also decompose into variables instead of constants, but you probably figured that out
+var (varStatusCode, varStatusMessage) = httpError404
+varStatusCode
+varStatusMessage
+
+//: You can also access them with the dot operator followed by their index:
+httpError404.0
+httpError404.1
+
+//: Alternatively, you can name the elements of a Tuple
+let namedTuple = (statusCode: 404, message: "Not found")
+
+//: When you name the elements you effectively assign names to their indices, so the dot operator
+//: works with names or integers:
+namedTuple.statusCode == namedTuple.0
+namedTuple.message == namedTuple.1
+
+//: not just two valuse ... but any number of valuse
+let mutlVal = ("one ", 1, "two", 2 , "ect ..." , true)
+mutlVal.5
+
+//: ## Optionals
 //: Use optionals to work with values that might be missing. An optional value either contains a value or contains `nil` (no value) to indicate that a value is missing. Write a question mark (`?`) after the type of a value to mark the value as optional.
 //:
 let optionalInt: Int? = 9
