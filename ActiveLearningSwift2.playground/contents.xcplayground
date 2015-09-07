@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' requires-full-environment='true' display-mode='rendered'>
+<playground version='6.0' target-platform='ios' requires-full-environment='true' display-mode='raw'>
     <pages>
         <page name='Learning Objectives'/>
         <page name='Basic Types'/>
         <page name='Optional'/>
         <page name='Collection Types'/>
         <page name='Control Flow'/>
+        <page name='Control Flow Experiments'/>
+        <page name='Functions'/>
         <page name='Functions and Methods'/>
+        <page name='Closures'/>
         <page name='Classes and Initializers'/>
+        <page name='Enumerations'/>
         <page name='Enumerations and Structures'/>
-        <page name='Protocols'/>
+        <page name='Enum Class Structs'/>
+        <page name='Methods'/>
+        <page name='Inherence '/>
+        <page name='Initializer Chaining'/>
+        <page name='Properties'/>
+        <page name='Protocol Summery'/>
+        <page name='Protocol'/>
+        <page name='Generics'/>
         <page name='Swift and Cocoa Touch'/>
         <page name='UIKit'/>
         <page name='CoreData'/>
         <page name='UIResources'/>
+        <page name='Advanced'/>
         <page name='License'/>
         <page name='ToC Swift SL'/>
         <page name='Text'/>
